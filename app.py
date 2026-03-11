@@ -26,10 +26,10 @@ def index():
                 "units" : "metric",
                 "lang" : "pt_br"
             }
-            response = request.get(url, params=params)
+            response = requests.get(url, params=params)
             if response.status_code == 200:
                 dados = response.json()
-                icone = f'http://openweathermap.org/img/wn/{dados['weather'][0]['icon']}@2x.png'
+                icone = f"http://openweathermap.org/img/wn/{dados['weather'][0]['icon']}@2x.png"
                 clima = {
                     "cidade" : cidade.title(),
                     "temp" : dados["main"]["temp"],
